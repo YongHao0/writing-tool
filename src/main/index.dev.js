@@ -8,13 +8,14 @@
 /* eslint-disable */
 
 // Install `electron-debug` with `devtron`
-import { BrowserWindow } from 'electron'
+import { session } from 'electron'
 require('electron-debug')({ showDevTools: true })
 
 // Install `vue-devtools`
 require('electron').app.on('ready', () => {
   let installExtension = require('electron-devtools-installer')
-  BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+  // BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+  session.defaultSession.loadExtension('/node_modules/vue-devtools/vender')
 })
 
 // Require `main` process to boot app

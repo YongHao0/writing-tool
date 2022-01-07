@@ -17,6 +17,7 @@ let webConfig = {
     web: path.join(__dirname, '../src/renderer/main.js')
   },
   module: {
+    unknownContextCritical: false,
     rules: [
       {
         test: /\.(js|vue)$/,

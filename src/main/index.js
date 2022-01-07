@@ -22,7 +22,11 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000
+    width: 1000,
+    webPreferences: {
+      nodeIntegration: true, // 是否集成 Nodejs，默认值为 false
+      contextIsolation: false // 是否在独立 JavaScript 环境中运行 Electron API 和指定的 preload 脚本. 默认为 true
+    }
   })
 
   mainWindow.loadURL(winURL)

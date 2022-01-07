@@ -30,6 +30,7 @@ let rendererConfig = {
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
   ],
   module: {
+    unknownContextCritical: false,
     rules: [
       {
         test: /\.(js|vue)$/,
